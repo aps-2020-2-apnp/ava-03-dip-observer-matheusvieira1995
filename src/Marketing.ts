@@ -1,18 +1,26 @@
 import { Produto } from './Produto'
+import { IObservadorAdicao } from './Interface/IObservadorAdicao'
+import { IObservadorRemocao } from './Interface/IObservadorRemocao'
+import { IObservadorAbandono } from './Interface/IObservadorAbandono'
+import { IObservadorCompraCarrinho } from './Interface/IObservadorCompraCarrinho'
+import { IObservadorAlteraPreco } from './Interface/IObservadorAlteraPreco'
 
-export class Marketing {
-  houveAdicao(p: Produto) {
+export class Marketing implements IObservadorAbandono, IObservadorAdicao, IObservadorCompraCarrinho, IObservadorRemocao, IObservadorAlteraPreco {
+  quandoAdicao(p: Produto) {
     console.info(`MARKETING: ${p.descricao} foi adicionado`)
   }
-  houveRemocao(p: Produto) {
+  quandoRemocao(p: Produto) {
     console.info(`MARKETING: ${p.descricao} foi removido`)
 
   }
-  houveCompra(produtos: Produto[]) {
+  quandoCompraCarrinho(produtos: Produto[]) {
     console.info(`MARKETING: ${produtos.length} comprado(s)`)
   }
-  houveAbandono(produtos: Produto[]) {
+  quandoAbandono(produtos: Produto[]) {
     console.info(`MARKETING: ${produtos.length} abandonado(s)`)
 
+  }
+  quandoAlteraPreco(produto: Produto){
+    console.info(`MARKETING: ${produto.descricao} alterou o preço para ${produto.preco}`)
   }
 }
