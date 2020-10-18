@@ -13,10 +13,10 @@ export class Logger implements IObservadorAbandono, IObservadorAdicao, IObservad
 
   }
   quandoCompraCarrinho(produtos: Produto[]) {
-    console.info(`LOGGER: ${produtos.length} comprado(s)`)
+    console.info(`LOGGER: ${produtos.length} produto(s) comprado(s)`)
   }
   quandoAbandono(produtos: Produto[]) {
-    console.info(`LOGGER: ${produtos.length} abandonado(s)`)
+    console.info(`LOGGER: ${produtos.length} produto(s) abandonado(s)`)
 
   }
 }

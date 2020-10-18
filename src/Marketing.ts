@@ -14,10 +14,10 @@ export class Marketing implements IObservadorAbandono, IObservadorAdicao, IObser
 
   }
   quandoCompraCarrinho(produtos: Produto[]) {
-    console.info(`MARKETING: ${produtos.length} comprado(s)`)
+    console.info(`MARKETING: ${produtos.length} produto(s) comprado(s)`)
   }
   quandoAbandono(produtos: Produto[]) {
-    console.info(`MARKETING: ${produtos.length} abandonado(s)`)
+    console.info(`MARKETING: ${produtos.length} produto(s) abandonado(s)`)
 
   }
   quandoAlteraPreco(produto: Produto){
